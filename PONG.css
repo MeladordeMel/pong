@@ -1,0 +1,27 @@
+    this.y = height / 2;
+    this.xSpeed = random([-2, 2]);
+    this.ySpeed = random([-2, 2]);
+  }
+}
+
+function keyPressed() {
+  if (keyCode === UP_ARROW) {
+    rightPaddle.move(-1);
+  } else if (keyCode === DOWN_ARROW) {
+    rightPaddle.move(1);
+  }
+  if (key === "w") {
+    leftPaddle.move(-1);
+  } else if (key === "s") {
+    leftPaddle.move(1);
+  }
+}
+
+function keyReleased() {
+  if (keyCode === UP_ARROW || keyCode === DOWN_ARROW) {
+    rightPaddle.stop();
+  }
+  if (key === "w" || key === "s") {
+    leftPaddle.stop();
+  }
+}
